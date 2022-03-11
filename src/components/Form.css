@@ -1,0 +1,16 @@
+input {
+    margin: 10px auto;
+}
+
+form {
+    padding: 0px;
+    margin: 0px;
+}
+
+.education-form, .job-form {
+    padding-bottom: 10px;
+}
+
+#add-education-form, #add-job-form {
+    margin-bottom: 20px;
+}
