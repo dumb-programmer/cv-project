@@ -23,6 +23,7 @@ class JobForm extends React.Component {
             onChange={onTitleChange}
             id="job-title"
             maxLength="40"
+            required
           ></input>
           <br></br>
           <label htmlFor="company">Company:</label>
@@ -33,6 +34,7 @@ class JobForm extends React.Component {
             onChange={onCompanyChange}
             id="company"
             maxLength="40"
+            required
           ></input>
           <br></br>
           <label htmlFor="start-date">Start Date :</label>
@@ -43,6 +45,7 @@ class JobForm extends React.Component {
             value={jobList[i].startDate}
             onChange={onStartDateChange}
             id="start-date"
+            required
           ></input>
           <br></br>
           <label htmlFor="end-date">End Date :</label>
@@ -53,6 +56,7 @@ class JobForm extends React.Component {
             min={jobList[i].startDate}
             onChange={onEndDateChange}
             id="end-date"
+            required
           ></input>
         </div>
       );

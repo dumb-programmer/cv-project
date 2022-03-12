@@ -27,6 +27,7 @@ class EducationForm extends React.Component {
             onChange={onSchoolNameChange}
             id="school-name"
             maxLength="40"
+            required
           ></input>
           <br></br>
           <label htmlFor="degree">Degree:</label>
@@ -37,6 +38,7 @@ class EducationForm extends React.Component {
             onChange={onDegreeChange}
             id="degree"
             maxLength="40"
+            required
           ></input>
           <br></br>
           <label htmlFor="start-date">Start Date :</label>
@@ -47,6 +49,7 @@ class EducationForm extends React.Component {
             value={educationList[i].startDate}
             onChange={onStartDateChange}
             id="start-date"
+            required
           ></input>
           <br></br>
           <label htmlFor="end-date">End Date :</label>
@@ -57,6 +60,7 @@ class EducationForm extends React.Component {
             value={educationList[i].endDate}
             onChange={onEndDateChange}
             id="end-date"
+            required
           ></input>
         </div>
       );
