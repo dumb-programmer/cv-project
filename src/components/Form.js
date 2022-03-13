@@ -4,7 +4,7 @@ import EducationForm from "./EducationForm";
 import EducationInfo from "./EducationInfo";
 import Job from "./JobInfo.js";
 import JobForm from "./JobForm";
-import "./Form.css";
+import "../styles/Form.css";
 
 class Form extends React.Component {
   constructor(props) {

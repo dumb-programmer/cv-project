@@ -1,6 +1,6 @@
 import React from "react";
 import uniqid from "uniqid";
-import "./CV.css";
+import "../styles/CV.css";
 
 class CV extends React.Component {
   constructor(props) {
