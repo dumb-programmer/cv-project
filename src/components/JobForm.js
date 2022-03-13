@@ -3,7 +3,7 @@ import React from "react";
 class JobForm extends React.Component {
   render() {
     const {
-      jobList,
+      jobsList,
       maxDate,
       addBtnEvent,
       onTitleChange,
@@ -12,14 +12,14 @@ class JobForm extends React.Component {
       onEndDateChange,
     } = this.props;
     let inputs = [];
-    for (let i = 0; i < jobList.length; i++) {
+    for (let i = 0; i < jobsList.length; i++) {
       inputs.push(
-        <div className="job-form" data-index={i} key={jobList[i].id}>
+        <div className="job-form" data-index={i} key={jobsList[i].id}>
           <label htmlFor="job-title">Job Title:</label>
           <br></br>
           <input
             type="text"
-            value={jobList[i].title}
+            value={jobsList[i].title}
             onChange={onTitleChange}
             id="job-title"
             maxLength="40"
@@ -30,7 +30,7 @@ class JobForm extends React.Component {
           <br></br>
           <input
             type="text"
-            value={jobList[i].company}
+            value={jobsList[i].company}
             onChange={onCompanyChange}
             id="company"
             maxLength="40"
@@ -42,7 +42,7 @@ class JobForm extends React.Component {
           <input
             type="date"
             max={maxDate}
-            value={jobList[i].startDate}
+            value={jobsList[i].startDate}
             onChange={onStartDateChange}
             id="start-date"
             required
@@ -52,8 +52,8 @@ class JobForm extends React.Component {
           <br></br>
           <input
             type="date"
-            value={jobList[i].endDate}
-            min={jobList[i].startDate}
+            value={jobsList[i].endDate}
+            min={jobsList[i].startDate}
             onChange={onEndDateChange}
             id="end-date"
             required

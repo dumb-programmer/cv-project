@@ -39,7 +39,6 @@ class GeneralInfo extends React.Component {
           onChange={onPhoneChange}
           required
         ></input>
-        <br></br>
       </div>
     );
   }

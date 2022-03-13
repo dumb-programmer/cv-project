@@ -21,6 +21,7 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -34,6 +35,7 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -47,12 +49,19 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
   formSubmit = (e) => {
     e.preventDefault();
-    console.log(this.props);
+    this.props.setState({
+      generalInfo: this.props.generalInfo,
+      educationList: this.props.educationList,
+      jobList: this.props.jobsList,
+      todayDate: this.props.todayDate,
+      formToggle: false,
+    });
   };
 
   addEducationForm = (e) => {
@@ -61,6 +70,7 @@ class Form extends React.Component {
       educationList: [...this.props.educationList, new EducationInfo()],
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -72,6 +82,7 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -83,6 +94,7 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -94,6 +106,7 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -105,15 +118,17 @@ class Form extends React.Component {
       educationList: this.props.educationList,
       jobList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
-  addJobForm = (e) => {
+  addJobForm = () => {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
-      jobList: [...this.props.jobsList, new Job()],
+      jobsList: [...this.props.jobsList, new Job()],
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -123,8 +138,9 @@ class Form extends React.Component {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
-      jobList: this.props.jobsList,
+      jobsList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -134,8 +150,9 @@ class Form extends React.Component {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
-      jobList: this.props.jobsList,
+      jobsList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -145,8 +162,9 @@ class Form extends React.Component {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
-      jobList: this.props.jobsList,
+      jobsList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -156,8 +174,9 @@ class Form extends React.Component {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
-      jobList: this.props.jobsList,
+      jobsList: this.props.jobsList,
       todayDate: this.props.todayDate,
+      formToggle: true,
     });
   };
 
@@ -182,7 +201,7 @@ class Form extends React.Component {
             onEndDateChange={this.onEducationEndDateChange}
           />
           <JobForm
-            jobList={jobsList}
+            jobsList={jobsList}
             maxDate={todayDate}
             addBtnEvent={this.addJobForm}
             onTitleChange={this.onJobTitleChange}
