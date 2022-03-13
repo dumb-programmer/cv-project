@@ -1,14 +1,15 @@
 body {
-    background-color: #F6E7D8;
+    background-color: #ffffff;
 }
 
 input {
     margin: 10px auto;
     border-radius: 5px;
+    padding: 0;
 }
 
 button {
-    background-color: #C65D7B;
+    background-color: #ffffff;
     border: none;
     padding: 5px;
     border-radius: 5px;
@@ -30,7 +31,8 @@ form {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    background-color: #F68989;
+    background-color: #393b47;
+    color: #ffffff;
 }
 
 .education-form, .job-form {

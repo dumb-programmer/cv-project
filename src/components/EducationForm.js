@@ -67,7 +67,7 @@ class EducationForm extends React.Component {
     }
     return (
       <div className="education-form">
-        <h1>Educational Experience</h1>
+        <h1>Education</h1>
         {inputs.map((input) => input)}
         <button id="add-education-form" type="button" onClick={addBtnEvent}>
           +

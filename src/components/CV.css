@@ -16,7 +16,6 @@ body {
 }
 
 aside, main {
-    /* border: 2px solid black; */
     box-sizing: border-box;
     height: 100%;
 }
