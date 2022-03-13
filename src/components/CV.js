@@ -8,7 +8,6 @@ class CV extends React.Component {
   }
   render() {
     const { generalInfo, educationList, jobsList } = this.props;
-    const FileRead = new FileReader();
     return (
       <div className="grid-container">
         <aside>

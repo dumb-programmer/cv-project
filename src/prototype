@@ -1,0 +1,32 @@
+<form action="">
+  <h1>General Information</h1>
+  <label for="name">Name : <input type="text" id="name" maxlengh="40" required></label>
+  <br>
+      <label for="email">Email : <input type="email" id="email" required> </input></label>
+  <br>
+  <label for="phone">Phone : <input type="phone" id="phone" required></input></label>
+
+  <h1>Educational Experience</h1>
+  <label for="school-name">School Name : <input type="text" id="school-name" maxlengh="40" required></label>
+  <br>
+  <label for="degree">Degree : <input type="text" id="degree" required></label>
+  <br>
+  <label for="start-date">Start Date : <input type="date" id="start-date" required></label>
+  <br>
+  <label for="end-date">End Date : <input type="date" id="end-date" required></label>
+  <br>
+  <button>+</button>
+
+  <h1>Practical Experience</h1>
+  <label for="company-name">Company Name : <input type="text" id="company-name" maxlengh="40" required></label>
+  <br>
+  <label for="position">Position Title : <input type="text" id="position" maxlengh="40" required></label>
+  <br>
+  <label for="start-date">Start Date : <input type="date" id="start-date" required></label>
+  <br>
+  <label for="end-date">End Date : <input type="date" id="end-date" required></label>
+  <br>
+  <button>+</button>
+  <br>
+  <button>Submit</button>
+</form>
