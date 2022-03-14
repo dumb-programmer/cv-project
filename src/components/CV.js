@@ -3,9 +3,6 @@ import uniqid from "uniqid";
 import "../styles/CV.css";
 
 class CV extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { generalInfo, educationList, jobsList } = this.props;
     return (

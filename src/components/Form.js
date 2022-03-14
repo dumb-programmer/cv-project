@@ -7,10 +7,6 @@ import JobForm from "./JobForm";
 import "../styles/Form.css";
 
 class Form extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   onNameChange = (e) => {
     this.props.setState({
       generalInfo: {
@@ -64,7 +60,7 @@ class Form extends React.Component {
     });
   };
 
-  addEducationForm = (e) => {
+  addEducationForm = () => {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: [...this.props.educationList, new EducationInfo()],
@@ -74,9 +70,7 @@ class Form extends React.Component {
     });
   };
 
-  onSchoolNameChange = (e) => {
-    const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.educationList[index].setSchoolName(e.target.value);
+  updateState = () => {
     this.props.setState({
       generalInfo: this.props.generalInfo,
       educationList: this.props.educationList,
@@ -84,42 +78,30 @@ class Form extends React.Component {
       todayDate: this.props.todayDate,
       formToggle: true,
     });
+  };
+
+  onSchoolNameChange = (e) => {
+    const index = +e.target.parentNode.getAttribute("data-index");
+    this.props.educationList[index].setSchoolName(e.target.value);
+    this.updateState();
   };
 
   onDegreeChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.educationList[index].setDegree(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   onEducationStartDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.educationList[index].setStartDate(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   onEducationEndDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.educationList[index].setEndDate(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   addJobForm = () => {
@@ -135,49 +117,25 @@ class Form extends React.Component {
   onJobTitleChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.jobsList[index].setTitle(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobsList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   onCompanyChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.jobsList[index].setCompany(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobsList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   onJobStartDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.jobsList[index].setStartDate(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobsList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   onJobEndDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
     this.props.jobsList[index].setEndDate(e.target.value);
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobsList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
+    this.updateState();
   };
 
   render() {
