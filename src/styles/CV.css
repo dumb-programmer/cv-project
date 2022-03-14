@@ -47,3 +47,7 @@ aside>h2 {
     background-color: #272731;
     width: 100%;
 }
+
+aside>h1, aside>h2, aside>b>p, .small-text {
+    padding-left: 15px;
+}
