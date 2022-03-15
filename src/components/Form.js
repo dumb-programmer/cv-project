@@ -14,10 +14,6 @@ class Form extends React.Component {
         email: this.props.generalInfo.email,
         phone: this.props.generalInfo.phone,
       },
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
     });
   };
 
@@ -28,10 +24,6 @@ class Form extends React.Component {
         email: e.target.value,
         phone: this.props.generalInfo.phone,
       },
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
     });
   };
 
@@ -42,31 +34,19 @@ class Form extends React.Component {
         email: this.props.generalInfo.email,
         phone: e.target.value,
       },
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
     });
   };
 
   formSubmit = (e) => {
     e.preventDefault();
     this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
       formToggle: false,
     });
   };
 
   addEducationForm = () => {
     this.props.setState({
-      generalInfo: this.props.generalInfo,
       educationList: [...this.props.educationList, new EducationInfo()],
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
     });
   };
 
@@ -106,11 +86,7 @@ class Form extends React.Component {
 
   addJobForm = () => {
     this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
       jobsList: [...this.props.jobsList, new Job()],
-      todayDate: this.props.todayDate,
-      formToggle: true,
     });
   };
 
