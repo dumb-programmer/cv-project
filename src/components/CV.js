@@ -3,6 +3,10 @@ import uniqid from "uniqid";
 import "../styles/CV.css";
 
 class CV extends React.Component {
+  onBtnClick = () => {
+    this.props.setState({ formToggle: true });
+  };
+
   render() {
     const { generalInfo, educationList, jobsList } = this.props;
     return (
@@ -51,6 +55,7 @@ class CV extends React.Component {
               })}
             </div>
           </div>
+          <button onClick={this.onBtnClick} id="edit-cv-btn"></button>
         </main>
       </div>
     );

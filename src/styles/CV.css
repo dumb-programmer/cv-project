@@ -28,6 +28,7 @@ aside {
 main {
     background-color: #ffffff;
     color: #343434;
+    position: relative;
 }
 
 .main-content {
@@ -38,6 +39,25 @@ main {
     border: 2px solid #C65D7B;
 }
 
+#edit-cv-btn {
+    position: fixed;
+    background-image: url("../assets/edit-2.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 30px;
+    right: 30px;
+    background-color: #272731;
+    color: #ffffff;
+    padding: 25px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+#edit-cv-btn:hover{
+    background-color: #3a3a44;
+}
+
 
 aside>h1 {
     font-size: 32px;
@@ -46,6 +66,8 @@ aside>h1 {
 aside>h2 {
     background-color: #272731;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 aside>h1, aside>h2, aside>b>p, .small-text {

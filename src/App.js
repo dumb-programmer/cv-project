@@ -42,6 +42,7 @@ class App extends React.Component {
             generalInfo={this.state.generalInfo}
             educationList={this.state.educationList}
             jobsList={this.state.jobsList}
+            setState={this.setState}
           />
         </div>
       );
