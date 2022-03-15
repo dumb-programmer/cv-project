@@ -1,10 +1,6 @@
 import React from "react";
 
 class GeneralInfo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { generalInfo, onNameChange, onEmailChange, onPhoneChange } =
       this.props;

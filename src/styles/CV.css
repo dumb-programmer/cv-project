@@ -32,7 +32,8 @@ main {
 }
 
 .main-content {
-    margin: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .main-content>h1 {
@@ -60,7 +61,7 @@ main {
 
 
 aside>h1 {
-    font-size: 32px;
+    font-size: 3rem;
 }
 
 aside>h2 {
