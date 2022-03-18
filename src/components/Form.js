@@ -6,148 +6,140 @@ import Job from "./JobInfo.js";
 import JobForm from "./JobForm";
 import "../styles/Form.css";
 
-class Form extends React.Component {
-  onNameChange = (e) => {
-    this.props.setState({
-      generalInfo: {
+const Form = (props) => {
+  const {
+    generalInfo,
+    setGeneralInfo,
+    educationList,
+    setEducationList,
+    jobsList,
+    setJobsList,
+    todayDate,
+    setFormToggle,
+  } = props;
+
+  const onNameChange = (e) => {
+    setGeneralInfo((prevState) => {
+      return {
         name: e.target.value,
-        email: this.props.generalInfo.email,
-        phone: this.props.generalInfo.phone,
-      },
+        email: prevState.email,
+        phone: prevState.phone,
+      };
     });
   };
 
-  onEmailChange = (e) => {
-    this.props.setState({
-      generalInfo: {
-        name: this.props.generalInfo.name,
+  const onEmailChange = (e) => {
+    setGeneralInfo((prevState) => {
+      return {
+        name: prevState.name,
         email: e.target.value,
-        phone: this.props.generalInfo.phone,
-      },
+        phone: prevState.phone,
+      };
     });
   };
 
-  onPhoneChange = (e) => {
-    this.props.setState({
-      generalInfo: {
-        name: this.props.generalInfo.name,
-        email: this.props.generalInfo.email,
+  const onPhoneChange = (e) => {
+    setGeneralInfo((prevState) => {
+      return {
+        name: prevState.name,
+        email: prevState.email,
         phone: e.target.value,
-      },
+      };
     });
   };
 
-  formSubmit = (e) => {
+  const formSubmit = (e) => {
     e.preventDefault();
-    this.props.setState({
-      formToggle: false,
-    });
+    setFormToggle(false);
   };
 
-  addEducationForm = () => {
-    this.props.setState({
-      educationList: [...this.props.educationList, new EducationInfo()],
-    });
+  const addEducationForm = () => {
+    setEducationList((prevState) => [...prevState, new EducationInfo()]);
   };
 
-  updateState = () => {
-    this.props.setState({
-      generalInfo: this.props.generalInfo,
-      educationList: this.props.educationList,
-      jobList: this.props.jobsList,
-      todayDate: this.props.todayDate,
-      formToggle: true,
-    });
-  };
-
-  onSchoolNameChange = (e) => {
+  const onSchoolNameChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.educationList[index].setSchoolName(e.target.value);
-    this.updateState();
+    educationList[index].setSchoolName(e.target.value);
+    setEducationList((prevState) => [...prevState]);
   };
 
-  onDegreeChange = (e) => {
+  const onDegreeChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.educationList[index].setDegree(e.target.value);
-    this.updateState();
+    educationList[index].setDegree(e.target.value);
+    setEducationList((prevState) => [...prevState]);
   };
 
-  onEducationStartDateChange = (e) => {
+  const onEducationStartDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.educationList[index].setStartDate(e.target.value);
-    this.updateState();
+    props.educationList[index].setStartDate(e.target.value);
+    setEducationList((prevState) => [...prevState]);
   };
 
-  onEducationEndDateChange = (e) => {
+  const onEducationEndDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.educationList[index].setEndDate(e.target.value);
-    this.updateState();
+    props.educationList[index].setEndDate(e.target.value);
+    setEducationList((prevState) => [...prevState]);
   };
 
-  addJobForm = () => {
-    this.props.setState({
-      jobsList: [...this.props.jobsList, new Job()],
-    });
+  const addJobForm = () => {
+    setJobsList((prevState) => [...prevState, new Job()]);
   };
 
-  onJobTitleChange = (e) => {
+  const onJobTitleChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.jobsList[index].setTitle(e.target.value);
-    this.updateState();
+    jobsList[index].setTitle(e.target.value);
+    setJobsList((prevState) => [...prevState]);
   };
 
-  onCompanyChange = (e) => {
+  const onCompanyChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.jobsList[index].setCompany(e.target.value);
-    this.updateState();
+    jobsList[index].setCompany(e.target.value);
+    setJobsList((prevState) => [...prevState]);
   };
 
-  onJobStartDateChange = (e) => {
+  const onJobStartDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.jobsList[index].setStartDate(e.target.value);
-    this.updateState();
+    jobsList[index].setStartDate(e.target.value);
+    setJobsList((prevState) => [...prevState]);
   };
 
-  onJobEndDateChange = (e) => {
+  const onJobEndDateChange = (e) => {
     const index = +e.target.parentNode.getAttribute("data-index");
-    this.props.jobsList[index].setEndDate(e.target.value);
-    this.updateState();
+    jobsList[index].setEndDate(e.target.value);
+    setJobsList((prevState) => [...prevState]);
   };
 
-  render() {
-    const { generalInfo, educationList, jobsList, todayDate } = this.props;
-    return (
-      <div className="form-container">
-        <form onSubmit={this.formSubmit}>
-          <GeneralInfo
-            generalInfo={generalInfo}
-            onNameChange={this.onNameChange}
-            onEmailChange={this.onEmailChange}
-            onPhoneChange={this.onPhoneChange}
-          />
-          <EducationForm
-            educationList={educationList}
-            maxDate={todayDate}
-            addBtnEvent={this.addEducationForm}
-            onSchoolNameChange={this.onSchoolNameChange}
-            onDegreeChange={this.onDegreeChange}
-            onStartDateChange={this.onEducationStartDateChange}
-            onEndDateChange={this.onEducationEndDateChange}
-          />
-          <JobForm
-            jobsList={jobsList}
-            maxDate={todayDate}
-            addBtnEvent={this.addJobForm}
-            onTitleChange={this.onJobTitleChange}
-            onCompanyChange={this.onCompanyChange}
-            onStartDateChange={this.onJobStartDateChange}
-            onEndDateChange={this.onJobEndDateChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="form-container">
+      <form onSubmit={formSubmit}>
+        <GeneralInfo
+          generalInfo={generalInfo}
+          onNameChange={onNameChange}
+          onEmailChange={onEmailChange}
+          onPhoneChange={onPhoneChange}
+        />
+        <EducationForm
+          educationList={educationList}
+          maxDate={todayDate}
+          addBtnEvent={addEducationForm}
+          onSchoolNameChange={onSchoolNameChange}
+          onDegreeChange={onDegreeChange}
+          onStartDateChange={onEducationStartDateChange}
+          onEndDateChange={onEducationEndDateChange}
+        />
+        <JobForm
+          jobsList={jobsList}
+          maxDate={todayDate}
+          addBtnEvent={addJobForm}
+          onTitleChange={onJobTitleChange}
+          onCompanyChange={onCompanyChange}
+          onStartDateChange={onJobStartDateChange}
+          onEndDateChange={onJobEndDateChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
 
 export default Form;

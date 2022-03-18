@@ -1,53 +1,48 @@
 import "./styles/App.css";
-import React from "react";
+import React, { useState } from "react";
 import Form from "./components/Form";
 import getDate from "./components/Date";
 import EducationInfo from "./components/EducationInfo";
 import Job from "./components/JobInfo";
 import CV from "./components/CV";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      generalInfo: {
-        name: "",
-        email: "",
-        phone: "",
-      },
-      educationList: [new EducationInfo()],
-      jobsList: [new Job()],
-      todayDate: getDate(),
-      formToggle: true,
-    };
-    this.setState = this.setState.bind(this);
+const App = () => {
+  const [generalInfo, setGeneralInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+  const [educationList, setEducationList] = useState([new EducationInfo()]);
+  const [jobsList, setJobsList] = useState([new Job()]);
+  const [formToggle, setFormToggle] = useState(true);
+
+  if (formToggle) {
+    return (
+      <div className="App">
+        <Form
+          generalInfo={generalInfo}
+          setGeneralInfo={setGeneralInfo}
+          educationList={educationList}
+          setEducationList={setEducationList}
+          jobsList={jobsList}
+          setJobsList={setJobsList}
+          todayDate={getDate()}
+          setFormToggle={setFormToggle}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <CV
+          generalInfo={generalInfo}
+          educationList={educationList}
+          jobsList={jobsList}
+          setFormToggle={setFormToggle}
+        />
+      </div>
+    );
   }
-  render() {
-    if (this.state.formToggle) {
-      return (
-        <div className="App">
-          <Form
-            generalInfo={this.state.generalInfo}
-            educationList={this.state.educationList}
-            jobsList={this.state.jobsList}
-            todayDate={this.state.todayDate}
-            setState={this.setState}
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div className="App">
-          <CV
-            generalInfo={this.state.generalInfo}
-            educationList={this.state.educationList}
-            jobsList={this.state.jobsList}
-            setState={this.setState}
-          />
-        </div>
-      );
-    }
-  }
-}
+};
 
 export default App;
